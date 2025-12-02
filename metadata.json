@@ -1,0 +1,7 @@
+{
+  "name": "RFLCTN",
+  "description": "A virtual wardrobe and try-on assistant. Upload your clothes, extract items, and generate AI-powered outfit previews on your own photo.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
