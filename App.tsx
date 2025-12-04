@@ -8,6 +8,7 @@ import { StorageService } from './services/storageService';
 import { ClothingItem, UserProfile, GeneratedOutfit, AppView, Article, AgentLog } from './types';
 import { TryOnWidget } from './components/TryOnWidget';
 import { Navbar } from './components/Navbar';
+import { NewsroomView } from './components/NewsroomView';
 
 // Skeleton Component for Loading States
 const SkeletonArticle = () => (
@@ -465,7 +466,7 @@ const App: React.FC = () => {
             const profileForAgent = targetCurrentUser && userProfile.hasProfile ? userProfile : undefined;
             const keywordsList = newsroomKeywords.split(',').map(s => s.trim()).filter(s => s.length > 0);
 
-            const newArticle = await antigravity.dispatchMission({
+            const newArticle = await AntigravityService.dispatchMission({
                 topic: newsroomTopic,
                 tone: newsroomTone,
                 keywords: keywordsList,
@@ -1238,7 +1239,26 @@ const App: React.FC = () => {
                 {view === AppView.ARTICLE && <ArticleOverlay />}
                 {view === AppView.SAVED_LOOKS && <SavedLooksView />}
                 {view === AppView.PROFILE && <ProfileView />}
-                {view === AppView.NEWSROOM && <NewsroomView />}
+                {view === AppView.NEWSROOM && <NewsroomView
+                    isAdmin={isAdmin}
+                    setView={setView}
+                    newsroomTopic={newsroomTopic}
+                    setNewsroomTopic={setNewsroomTopic}
+                    newsroomTone={newsroomTone}
+                    setNewsroomTone={setNewsroomTone}
+                    newsroomKeywords={newsroomKeywords}
+                    setNewsroomKeywords={setNewsroomKeywords}
+                    newsroomAudience={newsroomAudience}
+                    setNewsroomAudience={setNewsroomAudience}
+                    newsroomStyleGuide={newsroomStyleGuide}
+                    setNewsroomStyleGuide={setNewsroomStyleGuide}
+                    targetCurrentUser={targetCurrentUser}
+                    setTargetCurrentUser={setTargetCurrentUser}
+                    userProfile={userProfile}
+                    isNewsroomBusy={isNewsroomBusy}
+                    handleDispatchMission={handleDispatchMission}
+                    agentLogs={agentLogs}
+                />}
             </main>
 
             {/* Context Widget (Try On) */}
