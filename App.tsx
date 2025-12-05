@@ -96,6 +96,7 @@ const App: React.FC = () => {
     const [newsroomTone, setNewsroomTone] = useState('Brutalist / Edgy');
     const [newsroomKeywords, setNewsroomKeywords] = useState('');
     const [newsroomAudience, setNewsroomAudience] = useState('');
+    const [newsroomStyleGuide, setNewsroomStyleGuide] = useState('');
     const [agentLogs, setAgentLogs] = useState<AgentLog[]>([]);
 
     // Sidebar layout state
@@ -471,7 +472,8 @@ const App: React.FC = () => {
                 tone: newsroomTone,
                 keywords: keywordsList,
                 targetAudience: newsroomAudience,
-                targetProfile: profileForAgent
+                targetProfile: profileForAgent,
+                styleGuide: newsroomStyleGuide
             });
 
             setArticles(prev => [newArticle, ...prev]);
@@ -761,150 +763,6 @@ const App: React.FC = () => {
             </div>
         </div>
     );
-
-    const NewsroomView = () => {
-        if (!isAdmin) {
-            return (
-                <div className="min-h-screen flex items-center justify-center bg-white">
-                    <div className="text-center border-4 border-black p-12 max-w-md">
-                        <div className="flex justify-center mb-4"><Icons.Lock className="w-8 h-8" /></div>
-                        <h2 className="text-4xl font-black uppercase">Restricted</h2>
-                        <p className="font-bold mt-4 text-stone-600">Admin Clearance Required for AI Editorial Backend.</p>
-                        <button onClick={() => setView(AppView.BLOG_FEED)} className="mt-8 underline font-bold uppercase">Return to Index</button>
-                    </div>
-                </div>
-            )
-        }
-
-        return (
-            <div className="p-4 md:p-12 min-h-screen bg-white pt-24">
-                <div className="border-b-8 border-black pb-8 mb-12 flex justify-between items-end">
-                    <div>
-                        <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter mb-2">NEWS<br />(ADMIN)</h1>
-                        <p className="font-bold uppercase tracking-widest text-stone-500">Google Antigravity Mission Control</p>
-                    </div>
-                    <div className="text-right font-bold uppercase text-xs text-black">
-                        <div className="flex items-center gap-2 justify-end mb-1">
-                            <div className={`w-3 h-3 rounded-full ${isNewsroomBusy ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`}></div>
-                            UPLINK: {isNewsroomBusy ? 'ACTIVE' : 'STANDBY'}
-                        </div>
-                        <div>SWARM STATUS: {isNewsroomBusy ? 'DEPLOYED' : 'AWAITING BRIEF'}</div>
-                    </div>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                    {/* MISSION BRIEFING CONSOLE */}
-                    <div className="bg-white border-4 border-black p-8 shadow-[12px_12px_0px_0px_#000] mb-12">
-                        <div className="flex justify-between items-center mb-6 border-b-2 border-black pb-2">
-                            <h3 className="font-black uppercase tracking-widest text-lg">Mission Briefing</h3>
-                            <span className="font-mono text-xs">ID: {crypto.randomUUID().split('-')[0].toUpperCase()}</span>
-                        </div>
-
-                        <label className="block font-black uppercase tracking-widest text-xs text-stone-500 mb-2">Core Directive (Theme)</label>
-                        <textarea
-                            key="newsroom-topic"
-                            value={newsroomTopic}
-                            onChange={(e) => setNewsroomTopic(e.target.value)}
-                            placeholder="ENTER THEME OR TREND..."
-                            className="w-full bg-stone-100 border-none text-black p-4 font-bold uppercase text-2xl focus:outline-none focus:bg-stone-200 h-32 resize-none mb-8 placeholder:text-stone-300"
-                        />
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 border-t-4 border-stone-100 pt-8">
-                            <div>
-                                <label className="block font-black uppercase tracking-widest text-xs text-stone-500 mb-2">Editorial Voice (Agent Tone)</label>
-                                <div className="relative">
-                                    <select
-                                        key="newsroom-tone"
-                                        value={newsroomTone}
-                                        onChange={(e) => setNewsroomTone(e.target.value)}
-                                        className="w-full bg-white border-4 border-stone-200 p-3 font-bold uppercase focus:border-black outline-none appearance-none cursor-pointer"
-                                    >
-                                        <option value="Brutalist / Edgy">Brutalist / Edgy</option>
-                                        <option value="Witty / Sarcastic">Witty / Sarcastic</option>
-                                        <option value="Authoritative / Vogue">Authoritative / Vogue</option>
-                                        <option value="Casual / Gen-Z">Casual / Gen-Z</option>
-                                        <option value="Academic / Critical">Academic / Critical</option>
-                                    </select>
-                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                                        <Icons.ChevronRight className="rotate-90 w-4 h-4" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <label className="block font-black uppercase tracking-widest text-xs text-stone-500 mb-2">Keywords / Vectors</label>
-                                <input
-                                    type="text"
-                                    value={newsroomKeywords}
-                                    onChange={(e) => setNewsroomKeywords(e.target.value)}
-                                    placeholder="E.G. SUSTAINABILITY, DENIM..."
-                                    className="w-full bg-white border-b-4 border-stone-200 p-3 font-bold uppercase focus:border-black outline-none placeholder:text-stone-300"
-                                />
-                            </div>
-                            <div>
-                                <label className="block font-black uppercase tracking-widest text-xs text-stone-500 mb-2">Target Audience</label>
-                                <input
-                                    type="text"
-                                    value={newsroomAudience}
-                                    onChange={(e) => setNewsroomAudience(e.target.value)}
-                                    placeholder="E.G. GEN Z, LUXURY SHOPPERS..."
-                                    className="w-full bg-white border-b-4 border-stone-200 p-3 font-bold uppercase focus:border-black outline-none placeholder:text-stone-300"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-4 mb-8">
-                            <div
-                                className={`cursor-pointer flex items-center gap-3 border-4 border-black px-6 py-3 select-none ${targetCurrentUser ? 'bg-black text-white' : 'bg-white text-black'}`}
-                                onClick={() => setTargetCurrentUser(!targetCurrentUser)}
-                            >
-                                <div className={`w-4 h-4 border-2 ${targetCurrentUser ? 'border-white bg-white' : 'border-black'}`}></div>
-                                <span className="font-black text-sm uppercase">Target: {userProfile.name || 'Guest'}</span>
-                            </div>
-
-                            <button
-                                onClick={() => setNewsroomTopic("Current Underground High-Fashion Trends for 2025 (Brutalist/Dystopian aesthetic)")}
-                                className="border-4 border-black px-6 py-3 font-black text-sm uppercase hover:bg-black hover:text-white transition-colors flex items-center gap-2"
-                            >
-                                <Icons.Globe className="w-5 h-5" /> Auto-Discover Trends
-                            </button>
-                        </div>
-
-                        <button
-                            onClick={handleDispatchMission}
-                            disabled={isNewsroomBusy || !newsroomTopic}
-                            className={`w-full py-6 font-black uppercase text-xl tracking-widest border-4 border-black transition-all hover:bg-black hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3`}
-                        >
-                            {isNewsroomBusy ? (
-                                <>
-                                    <Spinner size="sm" color="text-current" />
-                                    DISPATCHING MISSION...
-                                </>
-                            ) : (
-                                <>INITIATE SWARM SEQUENCE <Icons.Magic className="w-6 h-6" /></>
-                            )}
-                        </button>
-                    </div>
-
-                    {/* LIVE LOGS CONSOLE */}
-                    {agentLogs.length > 0 && (
-                        <div className="bg-black text-green-400 font-mono p-6 border-4 border-stone-500 h-64 overflow-y-auto" id="log-container">
-                            <div className="text-xs text-stone-500 mb-2 border-b border-stone-800 pb-1">ANTIGRAVITY UPLINK ESTABLISHED // ENCRYPTED</div>
-                            {agentLogs.map((log) => (
-                                <div key={log.id} className="mb-2 text-sm">
-                                    <span className="opacity-50">[{new Date(log.timestamp).toLocaleTimeString()}]</span>{' '}
-                                    <span className={`font-bold ${log.role === 'EDITOR' ? 'text-blue-400' : log.role === 'STYLIST' ? 'text-pink-400' : log.role === 'PHOTOGRAPHER' ? 'text-yellow-400' : 'text-white'}`}>
-                                        {log.role}
-                                    </span>{' '}
-                                    <span>{log.message}</span>
-                                </div>
-                            ))}
-                            {isNewsroomBusy && <div className="animate-pulse">_</div>}
-                        </div>
-                    )}
-                </div>
-            </div>
-        );
-    };
 
     // --- NEW VIEW: LONG READS ---
     const LongReadsView = () => {

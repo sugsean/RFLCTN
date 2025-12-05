@@ -1,22 +1,30 @@
 // services/antigravityService.ts
 
-// TODO: Replace with your actual Cloud Run URL after deployment
-const BACKEND_URL = "http://localhost:8080";
+// Backend URL - Cloud Run deployment
+const BACKEND_URL = "https://rflctn-backend-840634477368.us-central1.run.app";
 
 export interface MissionConfig {
     topic: string;
     tone: string;
     keywords: string[];
     targetAudience: string;
-    style_guide?: string; // Optional: Text to train the writer's voice
+    styleGuide?: string; // Optional: Text to train the writer's voice
     targetProfile?: any; // Optional: User profile for personalization
 }
 
 export interface MissionResponse {
-    status: string;
-    research_summary: string; // The raw research data
-    article: string; // JSON string
-    items: string;   // JSON string
+    id: string;
+    title: string;
+    subtitle: string;
+    author: string;
+    date: string;
+    coverImage: string;
+    content: string;
+    items: any[];
+    themeColor: string;
+    category: string;
+    style: string;
+    sourceUrl: string;
 }
 
 export const AntigravityService = {

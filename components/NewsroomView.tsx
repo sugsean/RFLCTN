@@ -76,7 +76,7 @@ export const NewsroomView = React.memo<NewsroomViewProps>(({
                 <div className="bg-white border-4 border-black p-8 shadow-[12px_12px_0px_0px_#000] mb-12">
                     <div className="flex justify-between items-center mb-6 border-b-2 border-black pb-2">
                         <h3 className="font-black uppercase tracking-widest text-lg">Mission Briefing</h3>
-                        <span className="font-mono text-xs">ID: {crypto.randomUUID().split('-')[0].toUpperCase()}</span>
+                        <span className="font-mono text-xs">ID: NEWSROOM-001</span>
                     </div>
 
                     <label className="block font-black uppercase tracking-widest text-xs text-stone-500 mb-2">Core Directive (Theme)</label>
@@ -103,6 +103,7 @@ export const NewsroomView = React.memo<NewsroomViewProps>(({
                                     <option value="Authoritative / Vogue">Authoritative / Vogue</option>
                                     <option value="Casual / Gen-Z">Casual / Gen-Z</option>
                                     <option value="Academic / Critical">Academic / Critical</option>
+                                    <option value="Street Luxe / UK Urban">Street Luxe / UK Urban</option>
                                 </select>
                                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                                     <Icons.ChevronRight className="rotate-90 w-4 h-4" />
