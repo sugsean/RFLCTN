@@ -1,7 +1,7 @@
 // services/antigravityService.ts
 
-// Backend URL - Cloud Run deployment
-const BACKEND_URL = "https://rflctn-backend-840634477368.us-central1.run.app";
+// Backend URL - Vercel Serverless Function
+const BACKEND_URL = "/api";
 
 export interface MissionConfig {
     topic: string;
