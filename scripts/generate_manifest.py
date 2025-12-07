@@ -37,11 +37,25 @@ def parse_markdown(file_path):
     # Construct article object
     article_id = file_path.stem
     
+    # Author Logic
+    # 1. Prefer frontmatter author
+    # 2. Randomly assign a persona if not set (deterministic based on article ID hash to keep it consistent)
+    author = frontmatter.get('author')
+    if not author:
+        import hashlib
+        # Simple deterministic selection based on filename
+        personas = [
+            "Juno Vox", "Kao Systems", "Ezra Black", "Sasha V."
+        ]
+        hash_obj = hashlib.md5(article_id.encode())
+        idx = int(hash_obj.hexdigest(), 16) % len(personas)
+        author = personas[idx]
+
     return {
         "id": article_id,
         "title": frontmatter.get('title', 'Untitled'),
         "subtitle": frontmatter.get('source', 'RFLCTN'),
-        "author": "RFLCTN Editorial",
+        "author": author,
         "date": frontmatter.get('date', datetime.now().isoformat()),
         "coverImage": frontmatter.get('image', ''), # Use image from frontmatter if available
         "content": body,
