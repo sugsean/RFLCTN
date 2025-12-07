@@ -41,6 +41,36 @@ const App: React.FC = () => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [articles, setArticles] = useState<Article[]>(MOCK_ARTICLES);
 
+    // Fetch real articles on load
+    useEffect(() => {
+        const loadArticles = async () => {
+            try {
+                const { ArticlesService } = await import('./services/articlesService');
+                const realArticles = await ArticlesService.fetchArticles();
+                if (realArticles.length > 0) {
+                    // map RFLCTNArticle to Article interface if needed, or just use if matches
+                    // The interfaces are slightly different, let's map them to ensure compatibility
+                    const mappedArticles: Article[] = realArticles.map(a => ({
+                        id: a.id,
+                        title: a.title,
+                        subtitle: a.subtitle,
+                        author: a.author,
+                        date: a.date,
+                        coverImage: a.coverImage,
+                        content: a.content,
+                        items: a.items || [],
+                        themeColor: a.themeColor,
+                        category: a.category
+                    }));
+                    setArticles(mappedArticles);
+                }
+            } catch (e) {
+                console.error("Failed to load real articles", e);
+            }
+        };
+        loadArticles();
+    }, []);
+
     // Filter State for Articles
     const [articleFilter, setArticleFilter] = useState<'ALL' | 'New Arrival' | 'Collection' | 'Editorial'>('ALL');
 

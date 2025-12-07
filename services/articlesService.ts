@@ -1,6 +1,6 @@
 // Service to fetch articles from the backend API
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://rflctn-backend-840634477368.us-central1.run.app';
 
 export interface RFLCTNArticle {
     id: string;
