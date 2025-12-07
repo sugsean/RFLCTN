@@ -1,9 +1,10 @@
 ---
-title: "Neck Anxiety: Are We Panicking About Our Platysma Before We've Even Hit 30?"
-date: 2025-12-05T09:13:10.922520
-source: "Business of Fashion"
-source_url: "https://www.businessoffashion.com/articles/beauty/neck-surgery-creams-treatments-2025/"
-style: "standard"
+date: 2025-12-05 09:13:10.922520
+image: /images/20251205_091310_neck-anxiety-are-we-panicking-about-our-platysma-b.jpg
+source: Business of Fashion
+source_url: https://www.businessoffashion.com/articles/beauty/neck-surgery-creams-treatments-2025/
+style: standard
+title: 'Neck Anxiety: Are We Panicking About Our Platysma Before We''ve Even Hit 30?'
 ---
 
 Right, so we've officially run out of things to worry about, haven't we? Just when I thought the beauty industry had exhausted every possible body part to obsess over, they've found a new frontier: the youthful neck. Apparently, people barely out of their teens are now identifying their neck as a ‘problem area’. My neck at 20 was worried about holding up my head after a proper night out in Shoreditch, not fine lines. But here we are, facing down 'neck anxiety' before we've even properly experienced adulting.

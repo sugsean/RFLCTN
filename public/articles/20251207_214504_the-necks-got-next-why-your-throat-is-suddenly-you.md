@@ -1,6 +1,7 @@
 ---
 date: '2025-12-07T21:45:04.485693'
 headline: 'The Neck''s Got Next: Why Your Throat Is Suddenly Your Biggest Worry'
+image: /images/20251207_214504_the-necks-got-next-why-your-throat-is-suddenly-you.jpg
 source: Business of Fashion
 source_url: https://www.businessoffashion.com/articles/beauty/neck-surgery-creams-treatments-2025/
 style: standard

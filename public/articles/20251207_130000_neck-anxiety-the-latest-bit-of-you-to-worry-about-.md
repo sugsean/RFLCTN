@@ -1,9 +1,10 @@
 ---
-title: "Neck Anxiety: The Latest Bit Of You To Worry About (Apparently)"
-date: 2025-12-07T13:00:00.388983
-source: "Business of Fashion"
-source_url: "https://www.businessoffashion.com/articles/beauty/neck-surgery-creams-treatments-2025/"
-style: "standard"
+date: 2025-12-07 13:00:00.388983
+image: /images/20251207_130000_neck-anxiety-the-latest-bit-of-you-to-worry-about-.jpg
+source: Business of Fashion
+source_url: https://www.businessoffashion.com/articles/beauty/neck-surgery-creams-treatments-2025/
+style: standard
+title: 'Neck Anxiety: The Latest Bit Of You To Worry About (Apparently)'
 ---
 
 Right, so I thought I’d heard it all. Cellulite on your elbows? Fine lines behind your knees? But now, apparently, we’re all supposed to be panicking about our *necks*. And not even us old gits, but the youth. The actual kids. According to Business of Fashion, "neck anxiety" is getting younger, and beauty brands are bare rushing to get in on the action before Gen Z decides to go under the knife.

@@ -1,9 +1,10 @@
 ---
-title: "My Mate Said the NFL's Got a New Hair Sponsor. I Said, 'You What?'"
-date: 2025-12-04T23:55:13.895223
-source: "Business of Fashion"
-source_url: "https://www.businessoffashion.com/news/beauty/mielle-organics-nfl-sponsorship/"
-style: "personal_blog"
+date: 2025-12-04 23:55:13.895223
+image: /images/20251204_235513_my-mate-said-the-nfls-got-a-new-hair-sponsor-i-sai.jpg
+source: Business of Fashion
+source_url: https://www.businessoffashion.com/news/beauty/mielle-organics-nfl-sponsorship/
+style: personal_blog
+title: My Mate Said the NFL's Got a New Hair Sponsor. I Said, 'You What?'
 ---
 
 I'm writing this from my kitchen table, still slightly baffled. My flatmate, bless his cotton socks, shouted across the living room this morning, "Did you know the NFL's got a hair sponsor now?" I genuinely thought he was taking the absolute piss. The NFL? American football, home of massive lads in helmets and shoulder pads, now worried about split ends? My initial reaction was pure, unadulterated London cynicism.

@@ -1,9 +1,10 @@
 ---
-title: "Pam Hogg: The London Rebel Who Dressed Icons and Never Gave a Toss"
-date: 2025-12-04T23:51:44.808442
-source: "Business of Fashion"
-source_url: "https://www.businessoffashion.com/news/creative-class/scottish-fashion-designer-pam-hogg-has-died/"
-style: "standard"
+date: 2025-12-04 23:51:44.808442
+image: /images/20251204_235144_pam-hogg-the-london-rebel-who-dressed-icons-and-ne.jpg
+source: Business of Fashion
+source_url: https://www.businessoffashion.com/news/creative-class/scottish-fashion-designer-pam-hogg-has-died/
+style: standard
+title: 'Pam Hogg: The London Rebel Who Dressed Icons and Never Gave a Toss'
 ---
 
 Right, so the fashion world lost a proper legend this week. Pam Hogg, the Scottish-born, London-made icon of New Wave rebellion, has shuffled off this mortal coil. And honestly, it feels like a bit of the capital's raw, unapologetic creative spirit has gone with her. Hogg wasn't just a designer; she was a force of nature, a fixture of London's counterculture scene, especially in the 80s, who championed an aesthetic that was less about trends and more about a full-throated scream of individuality.

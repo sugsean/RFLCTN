@@ -1,9 +1,10 @@
 ---
-title: "Prada’s Green Promise: Are We All Just Recycled Nylon Sceptics Now?"
-date: 2025-12-04T09:09:02.334674
-source: "Vogue Business"
-source_url: "https://example.com/prada-sustainable"
-style: "standard"
+date: 2025-12-04 09:09:02.334674
+image: /images/20251204_090902_pradas-green-promise-are-we-all-just-recycled-nylo.jpg
+source: Vogue Business
+source_url: https://example.com/prada-sustainable
+style: standard
+title: 'Prada’s Green Promise: Are We All Just Recycled Nylon Sceptics Now?'
 ---
 
 Right, so Prada, the undisputed king of sleek black nylon and equally sleek marketing, has unveiled a new collection that's apparently all about sustainability and ethical production. Vogue Business is buzzing about it, and fair play, it sounds like a step in the right direction. But after years of hearing every luxury brand on the planet suddenly declare themselves "eco-conscious," one does start to feel a bit like a cynical old git, doesn't one?

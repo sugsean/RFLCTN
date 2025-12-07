@@ -1,9 +1,10 @@
 ---
-title: "My Face, My Rules (Or, Why the Filler Industry is Having a Proper Meltdown)"
-date: 2025-12-04T19:26:51.599299
-source: "Business of Fashion"
-source_url: "https://www.businessoffashion.com/articles/beauty/reviving-declining-filler-sales/"
-style: "personal_blog"
+date: 2025-12-04 19:26:51.599299
+image: /images/20251204_192651_my-face-my-rules-or-why-the-filler-industry-is-hav.jpg
+source: Business of Fashion
+source_url: https://www.businessoffashion.com/articles/beauty/reviving-declining-filler-sales/
+style: personal_blog
+title: My Face, My Rules (Or, Why the Filler Industry is Having a Proper Meltdown)
 ---
 
 I'm sat here in my flat in Peckham, nursing a lukewarm cuppa and scrolling through the endless parade of 'natural' beauty transformations on my feed. You know the ones – glow-ups so subtle they almost make you believe they just drank more water and found the right lighting. But then *Business of Fashion* drops a piece about filler sales deflating faster than a cheap air mattress, and suddenly it all clicks. The illusion, the pressure, the industry panic. It's all a bit much, innit?
