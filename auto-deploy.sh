@@ -9,8 +9,8 @@ echo ""
 
 # Step 1: Generate new article
 echo "📝 Generating new article..."
-cd ../../../nodal-curie
-python main.py --mode once
+cd ../../nodal-curie
+python main.py --mode once --auto
 
 if [ $? -ne 0 ]; then
     echo "❌ Article generation failed"
@@ -28,9 +28,21 @@ cd ../ionic-rocket/RFLCTN
 mkdir -p public/articles
 
 # Copy all markdown files
-cp ../../../nodal-curie/articles/*.md public/articles/
+cp ../../nodal-curie/articles/*.md public/articles/
 
 echo "✅ Articles copied"
+echo ""
+
+# Generate JSON Manifest
+echo "📊 Generating JSON manifest..."
+python3 scripts/generate_manifest.py
+
+if [ $? -ne 0 ]; then
+    echo "❌ Manifest generation failed"
+    exit 1
+fi
+
+echo "✅ Manifest generated"
 echo ""
 
 # Step 3: Commit and push to GitHub

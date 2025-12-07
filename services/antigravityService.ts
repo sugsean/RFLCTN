@@ -39,7 +39,9 @@ export const AntigravityService = {
             });
 
             if (!response.ok) {
-                throw new Error(`Backend error: ${response.statusText}`);
+                const errorText = await response.text();
+                console.error(`Backend Error (${response.status}):`, errorText);
+                throw new Error(`Mission Failed: ${response.status} ${response.statusText} - ${errorText}`);
             }
 
             return await response.json();

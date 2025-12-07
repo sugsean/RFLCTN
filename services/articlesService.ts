@@ -1,6 +1,4 @@
-// Service to fetch articles from the backend API
-
-const API_BASE_URL = 'https://rflctn-backend-840634477368.us-central1.run.app';
+// Service to fetch articles from static manifest
 
 export interface RFLCTNArticle {
     id: string;
@@ -19,13 +17,14 @@ export interface RFLCTNArticle {
 
 export class ArticlesService {
     /**
-     * Fetch all articles from the backend
+     * Fetch all articles from the static JSON manifest
      */
     static async fetchArticles(): Promise<RFLCTNArticle[]> {
         try {
-            const response = await fetch(`${API_BASE_URL}/api/articles`);
+            // Fetch the generated manifest file
+            const response = await fetch('/articles.json');
             if (!response.ok) {
-                throw new Error('Failed to fetch articles');
+                throw new Error('Failed to fetch article manifest');
             }
             return await response.json();
         } catch (error) {
@@ -36,26 +35,21 @@ export class ArticlesService {
 
     /**
      * Fetch a single article by ID
+     * Note: In static mode, we fetch from the manifest or load the markdown file
      */
     static async fetchArticle(id: string): Promise<RFLCTNArticle | null> {
         try {
-            const response = await fetch(`${API_BASE_URL}/api/articles/${id}`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch article');
-            }
-            return await response.json();
+            const articles = await this.fetchArticles();
+            return articles.find(a => a.id === id) || null;
         } catch (error) {
             console.error('Error fetching article:', error);
             return null;
         }
     }
 
-    /**
-     * Check if the backend API is available
-     */
     static async checkBackend(): Promise<boolean> {
         try {
-            const response = await fetch(`${API_BASE_URL}/`);
+            const response = await fetch('/articles.json');
             return response.ok;
         } catch (error) {
             return false;
