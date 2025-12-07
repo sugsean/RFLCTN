@@ -20,6 +20,17 @@ fi
 echo "✅ Article generated"
 echo ""
 
+# Step 1.5: Generate/Fetch Images
+echo "🖼️ Processing images..."
+python process_images.py
+
+if [ $? -ne 0 ]; then
+    echo "⚠️ Image processing encountered an error (continuing anyway)"
+fi
+
+echo "✅ Images processed"
+echo ""
+
 # Step 2: Copy articles to website
 echo "📋 Copying articles to website..."
 cd ../ionic-rocket/RFLCTN
