@@ -988,7 +988,7 @@ const App: React.FC = () => {
                         </div>
                     )}
 
-                    <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] mb-8 break-words hyphens-auto">
+                    <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8 break-words hyphens-auto">
                         {activeArticle.title}
                     </h1>
 
@@ -1006,7 +1006,7 @@ const App: React.FC = () => {
                                 {isGeneratingAudio ? <Spinner size="sm" color="text-current" /> : isPlayingAudio ? <><Icons.Pause className="w-4 h-4" /> PAUSE</> : <><Icons.SpeakerWave className="w-4 h-4" /> LISTEN</>}
                             </button>
                         </div>
-                        <div className="col-span-3 text-2xl md:text-3xl font-bold uppercase leading-tight">
+                        <div className="col-span-3 text-xl md:text-2xl font-bold uppercase leading-tight">
                             {activeArticle.subtitle}
                         </div>
                     </div>
@@ -1016,7 +1016,11 @@ const App: React.FC = () => {
                         <img src={getImageSrc(activeArticle.coverImage)} className="w-full h-auto grayscale" />
                     </div>
 
-                    <div className={`prose prose-xl max-w-none prose-headings:font-black prose-headings:uppercase prose-p:font-medium prose-p:text-black prose-blockquote:border-l-8 border-black prose-blockquote:bg-stone-100 prose-blockquote:p-8 prose-blockquote:font-black prose-blockquote:uppercase prose-blockquote:not-italic ${isRewriting ? 'opacity-50' : ''}`}>
+                    <div className={`prose prose-lg max-w-none 
+                        prose-p:mb-6 prose-p:leading-relaxed prose-p:text-stone-800
+                        prose-headings:font-black prose-headings:uppercase prose-headings:mb-4
+                        prose-blockquote:border-l-8 prose-blockquote:border-black prose-blockquote:bg-stone-100 prose-blockquote:p-8 prose-blockquote:font-black prose-blockquote:uppercase prose-blockquote:not-italic 
+                        ${isRewriting ? 'opacity-50' : ''}`}>
                         <div dangerouslySetInnerHTML={{ __html: activeArticle.content }} />
                     </div>
 
